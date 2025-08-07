@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Enterprise Industry Solutions - Reach-Out AI</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /********** Template CSS **********/
+        :root {
+            --primary: #1363C6;
+            --secondary: #1363C6;
+            --light: #F4F7FE;
+            --dark: #14183E;
+            --white: #ffffff;
+            --light-gray: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /*** Common Styles ***/
+        #spinner {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity .5s ease-out, visibility 0s linear .5s;
+            z-index: 99999;
+        }
+
+        #spinner.show {
+            transition: opacity .5s ease-out, visibility 0s linear 0s;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .back-to-top {
+            position: fixed;
+            display: none;
+            right: 45px;
+            bottom: 45px;
+            z-index: 99;
+        }
+
+        h1, h2, h3, .fw-bold {
+            font-weight: 700 !important;
+        }
+
+        h4, h5, h6, .fw-medium {
+            font-weight: 500 !important;
+        }
+
+        .btn {
+            font-weight: 500;
+            transition: .5s;
+        }
+
+        .btn-square {
+            width: 38px;
+            height: 38px;
+        }
+
+        .btn-sm-square {
+            width: 32px;
+            height: 32px;
+        }
+
+        .btn-lg-square {
+            width: 48px;
+            height: 48px;
+        }
+
+        .btn-square, .btn-sm-square, .btn-lg-square {
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: normal;
+            border-radius: 50px;
+        }
+
+        /*** Navbar ***/
+        .sticky-top {
+            top: -150px;
+            transition: .5s;
+            background-color: var(--primary);
+        }
+
+        .navbar {
+            padding: 11px 0 !important;
+            height: 75px;
+        }
+
+        .navbar .navbar-nav .nav-link {
+            margin-right: 35px;
+            padding: 0;
+            color: rgba(255, 255, 255, .7);
+            outline: none;
+        }
+
+        .navbar .navbar-nav .nav-link:hover,
+        .navbar .navbar-nav .nav-link.active {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        @media (max-width: 991.98px) {
+            .navbar .navbar-nav {
+                padding: 0 15px;
+                background: var(--primary);
+            }
+
+            .navbar .navbar-nav .nav-link {
+                margin-right: 0;
+                padding: 10px 0;
+            }
+        }
+
+        /*** Hero Header ***/
+        .hero-header {
+            margin-top: -75px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><polygon points="0,30 30,0 60,30 30,60"/></g></svg>') repeat;
+            animation: float 20s infinite linear;
+            opacity: 0.3;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-50px, -50px) rotate(0deg); }
+            100% { transform: translate(-50px, -50px) rotate(360deg); }
+        }
+
+        .hero-header .breadcrumb-item+.breadcrumb-item::before {
+            color: var(--light);
+        }
+
+        /*** Split Layout ***/
+        .split-section {
+            min-height: 80vh;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .left-panel {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .left-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: -50px;
+            width: 100px;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1));
+            transform: skewX(-15deg);
+        }
+
+        .industry-badge {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: rgba(255,255,255,0.2);
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .industry-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+
+        .industry-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list li {
+            padding: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .feature-list li i {
+            margin-right: 1rem;
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .right-panel {
+            background: var(--light);
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .content-section {
+            max-width: 600px;
+        }
+
+        .section-intro {
+            font-size: 1.2rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .main-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background: var(--dark);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        /*** Footer ***/
+        .footer {
+            background: var(--dark) !important;
+        }
+
+        .footer .btn.btn-social {
+            margin-right: 5px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,.5);
+            border: 1px solid rgba(256, 256, 256, .1);
+            border-radius: 40px;
+            transition: .3s;
+        }
+
+        .footer .btn.btn-social:hover {
+            color: var(--primary);
+        }
+
+        .footer .btn.btn-link {
+            display: block;
+            margin-bottom: 10px;
+            padding: 0;
+            text-align: left;
+            color: rgba(255,255,255,.5);
+            font-weight: normal;
+            transition: .3s;
+        }
+
+        .footer .btn.btn-link:hover {
+            color: #FFFFFF;
+        }
+
+        .footer .btn.btn-link::before {
+            position: relative;
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            margin-right: 10px;
+        }
+
+        .footer .btn.btn-link:hover {
+            letter-spacing: 1px;
+            box-shadow: none;
+        }
+
+        .footer .copyright {
+            padding: 25px 0;
+            font-size: 14px;
+            border-top: 1px solid rgba(256, 256, 256, .1);
+        }
+
+        .footer .copyright a {
+            color: rgba(255,255,255,.5);
+        }
+
+        .footer .copyright a:hover {
+            color: #FFFFFF;
+        }
+
+        .footer .footer-menu a {
+            margin-right: 15px;
+            padding-right: 15px;
+            border-right: 1px solid rgba(255, 255, 255, .1);
+        }
+
+        .footer .footer-menu a:last-child {
+            margin-right: 0;
+            padding-right: 0;
+            border-right: none;
+        }
+
+        /*** Newsletter ***/
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        /*** Responsive ***/
+        @media (max-width: 991px) {
+            .split-section {
+                flex-direction: column;
+                min-height: auto;
+            }
+
+            .left-panel, .right-panel {
+                padding: 3rem 2rem;
+            }
+
+            .industry-title {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .left-panel, .right-panel {
+                padding: 2rem 1rem;
+            }
+
+            .industry-title {
+                font-size: 2rem;
+            }
+        }
+
+        /* Animation classes */
+        .slideInRight {
+            animation: slideInRight 1s ease-out;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translate3d(100%, 0, 0);
+                visibility: visible;
+            }
+            to {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .fadeIn {
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark p-0">
+                <a href="index.html" class="navbar-brand">
+                    <h2 class="text-white">Reach<span class="text-dark">-</span>Out<span class="text-dark">.</span>AI</h2>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">Services</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                    <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pt-5 bg-primary hero-header">
+        <div class="container pt-5">
+            <div class="row g-5 pt-5">
+                <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
+                    <h1 class="display-4 text-white mb-4 animated slideInRight">Enterprise Solutions</h1>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="service.html">Industries</a></li>
+                            <li class="breadcrumb-item text-white active" aria-current="page">Enterprise</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="col-lg-6 align-self-end text-center text-lg-end">
+                    <img class="img-fluid" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Enterprise" style="max-height: 300px;">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(20, 24, 62, 0.7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn btn-square bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-light p-3" placeholder="Type search keyword">
+                        <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+    <!-- Split Content Section -->
+    <div class="container-fluid p-0">
+        <div class="row g-0 split-section">
+            <!-- Left Panel -->
+            <div class="col-lg-6 left-panel">
+                <div class="industry-badge">Intelligent Automation</div>
+                <h1 class="industry-title">Automate the Boring. Amplify the Work That Matters.</h1>
+                <p class="industry-subtitle">Multi-agent systems that handle routine workflows, freeing your team to focus on strategic, high-value work.</p>
+                
+                <ul class="feature-list">
+                    <li><i class="fas fa-file-invoice"></i> Smart Invoice Processing</li>
+                    <li><i class="fas fa-chart-line"></i> Lead Scoring</li>
+                    <li><i class="fas fa-database"></i> CRM Updates</li>
+                    <li><i class="fas fa-headset"></i> Helpdesk Automation</li>
+                    <li><i class="fas fa-plug"></i> Platform Integration</li>
+                </ul>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="col-lg-6 right-panel">
+                <div class="content-section">
+                    <!-- <div class="section-intro">The Challenge</div> -->
+                    <div class="main-content">
+                        Enterprises are full of repetitive tasks that burn hours and drain teams. Whether it's data entry, internal reporting, or customer support, there's a better way to handle it. Intelligent automation frees people to focus on high-value work.
+                    </div>
+
+                    <!-- <div class="section-intro">Our Solution</div> -->
+                    <div class="main-content">
+                        We build multi-agent systems that handle routine workflows with minimal oversight. That includes smart invoice processing, lead scoring, CRM updates, and helpdesk automation. Our tools plug into platforms like Salesforce and HubSpot and evolve with your business needs. It's automation that doesn't get in the way, it gets things done.
+                    </div>
+
+                    <!-- <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">80%</span>
+                            <div class="stat-label">Reduction in Manual Tasks</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3x</span>
+                            <div class="stat-label">Faster Process Completion</div>
+                        </div>
+                    </div> -->
+
+                    <a href="contact.html" class="cta-button">
+                        Automate Your Enterprise
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter Start -->
+    <div class="container-fluid bg-primary newsletter py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
+                    <img class="img-fluid" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Newsletter">
+                </div>
+                <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
+                    <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Ready to Get Started?</div>
+                    <h1 class="text-white mb-4">Let's subscribe</h1>
+                    <div class="position-relative w-100 mt-3 mb-2">
+                        <input class="form-control border-0 rounded-pill w-100 ps-4 pe-5" type="text" placeholder="Enter Your Email" style="height: 48px;">
+                        <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i class="fa fa-paper-plane text-primary fs-4"></i></button>
+                    </div>
+                    <small class="text-white-50">Join hundreds of enterprises already transforming operations with AI.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Newsletter End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                    <a href="index.html" class="d-inline-block mb-3">
+                        <h2 class="text-white">Reach<span class="text-primary">-</span>Out<span class="text-primary">.</span>AI</h2>
+                    </a>
+                    <p class="mb-0">Designing Intelligence That Adapts to You. We build AI platforms that are personal by design and practical by nature.</p>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                    <h5 class="text-white mb-4">Get In Touch</h5>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>No 53, Sneha, Kachohalli, Gangondanahalli, Dasanapura, Bangalore North, Bangalore- 562162</p>
+                    <p><i class="fa fa-phone-alt me-3"></i>+91 6361057518</p>
+                    <p><i class="fa fa-envelope me-3"></i>admin@reach-out.ai</p>
+                    <div class="d-flex pt-2">
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61577901904209"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/reach_out_ai_technology/"><i class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/company/reach-out-ai-technologies"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Popular Link</h5>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4">Our Services</h5>
+                    <a class="btn btn-link" href="service.html">Education AI Platforms</a>
+                    <a class="btn btn-link" href="service.html">Generative AI Training</a>
+                    <a class="btn btn-link" href="service.html">Companion Bots</a>
+                    <a class="btn btn-link" href="service.html">Agentic Workflow Systems</a>
+                    <a class="btn btn-link" href="service.html">Custom LLM & SLM Training</a>
+                </div>
+            </div>
+        </div>
+        <div class="container wow fadeIn" data-wow-delay="0.1s">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; 2025 <a class="border-bottom" href="#">Reach-Out AI Technology</a>, All Right Reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <div class="footer-menu">
+                            <a href="index.html">Home</a>
+                            <a href="contact.html">Help</a>
+                            <a href="index.html">FAQs</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Spinner functionality
+        $(window).on('load', function() {
+            if ($('#spinner').length) {
+                $('#spinner').removeClass('show');
+            }
+        });
+
+        // Sticky navbar
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 45) {
+                $('.sticky-top').css('top', '0px');
+            } else {
+                $('.sticky-top').css('top', '-100px');
+            }
+        });
+
+        // Back to top button
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('.back-to-top').fadeIn('slow');
+            } else {
+                $('.back-to-top').fadeOut('slow');
+            }
+        });
+        $('.back-to-top').click(function () {
+            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+            return false;
+        });
+
+        // WOW.js Animation (Simple fallback)
+        $(document).ready(function() {
+            $('.wow').each(function(i) {
+                $(this).delay(i * 200).animate({opacity: 1}, 1000);
+            });
+        });
+
+        // Initialize animations
+        $('.wow').css('opacity', 0);
+    </script>
+</body>
+
+</html>
