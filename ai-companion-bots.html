@@ -142,7 +142,7 @@
                 background: var(--primary);
             }
 
-            .navbar .navbar-nav .nav-link  {
+            .navbar .navbar-nav .nav-link {
                 margin-right: 0;
                 padding: 10px 0;
             }
@@ -246,7 +246,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
             border: 1px solid rgba(256, 256, 256, .1);
             border-radius: 40px;
             transition: .3s;
@@ -261,7 +261,7 @@
             margin-bottom: 10px;
             padding: 0;
             text-align: left;
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
             font-weight: normal;
             transition: .3s;
         }
@@ -290,7 +290,7 @@
         }
 
         .footer .copyright a {
-            color: rgba(255,255,255,.5);
+            color: rgba(255, 255, 255, .5);
         }
 
         .footer .copyright a:hover {
@@ -314,11 +314,41 @@
             background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
 
+           /* Styles for the search results dropdown in the modal */
+        #searchResultsDropdown {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            z-index: 1050;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-group-item-action {
+            padding: 12px 18px;
+            border-bottom: 1px solid #eee;
+            color: #212529;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .list-group-item-action:hover {
+            background: #f1f1f1;
+            color: #0d6efd;
+        }
+
+        #searchResultsDropdown .list-group-item:last-child {
+            border-bottom: none;
+        }
+
         @media (max-width: 768px) {
             .content-card {
                 margin-top: -50px;
             }
-            
+
             .content-image {
                 height: 200px;
             }
@@ -348,6 +378,7 @@
                 transform: translate3d(100%, 0, 0);
                 visibility: visible;
             }
+
             to {
                 transform: translate3d(0, 0, 0);
             }
@@ -362,6 +393,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -385,7 +417,8 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <a href="index.html" class="navbar-brand">
-                    <h2 class="text-white">Reach<span class="text-dark">-</span>Out<span class="text-dark">.</span>AI</h2>
+                    <h2 class="text-white">Reach<span class="text-white">-</span>Out<span class="text-white">.</span>AI
+                    </h2>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
                     data-bs-target="#navbarCollapse">
@@ -421,7 +454,9 @@
                     </nav>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
-                    <img class="img-fluid" src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="AI Companion Bot" style="max-height: 300px;">
+                    <img class="img-fluid"
+                        src="https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="AI Companion Bot" style="max-height: 300px;">
                 </div>
             </div>
         </div>
@@ -453,23 +488,29 @@
         <div class="container py-5">
             <div class="content-card wow fadeIn" data-wow-delay="0.1s">
                 <div class="content-image"></div>
-                
+
                 <div class="p-5">
                     <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Emotionally Aware AI</div>
                     <h1 class="mb-4">Bots That Grow With the User</h1>
-                    
+
                     <div class="content-text wow fadeIn" data-wow-delay="0.3s">
-                        These aren't your average chatbots. Our AI companions are emotionally aware, voice-enabled, and designed to adapt to the user's age, goals, and curiosity. Whether it's early learning, exam prep, or career planning, these bots evolve alongside the learner.
+                        These aren't your average chatbots. Our AI companions are emotionally aware, voice-enabled, and
+                        designed to adapt to the user's age, goals, and curiosity. Whether it's early learning, exam
+                        prep, or career planning, these bots evolve alongside the learner.
                     </div>
 
                     <div class="content-text wow fadeIn" data-wow-delay="0.5s">
-                        They listen, understand, and respond like a human would. Built on GenAI and multi-modal frameworks, they bring together conversation, content, and emotion. Perfect for students, lifelong learners, and anyone who needs a smart guide that actually gets them.
+                        They listen, understand, and respond like a human would. Built on GenAI and multi-modal
+                        frameworks, they bring together conversation, content, and emotion. Perfect for students,
+                        lifelong learners, and anyone who needs a smart guide that actually gets them.
                     </div>
 
                     <div class="highlight-section wow fadeIn" data-wow-delay="0.7s">
                         <div class="highlight-content">
                             <div class="highlight-title">
-                                Beyond Conversation: AI Companions that Learn, Adapt, and Evolve with Every Interaction, Providing Personalized Support that Understands Not Just What You Say, But How You Feel and What You Need to Succeed.
+                                Beyond Conversation: AI Companions that Learn, Adapt, and Evolve with Every Interaction,
+                                Providing Personalized Support that Understands Not Just What You Say, But How You Feel
+                                and What You Need to Succeed.
                             </div>
                         </div>
                     </div>
@@ -491,11 +532,13 @@
     <!-- Content End -->
 
     <!-- Newsletter Start -->
-    <div class="container-fluid bg-primary newsletter py-5">
+    <!-- <div class="container-fluid bg-primary newsletter py-5">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
-                    <img class="img-fluid" src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Newsletter">
+                    <img class="img-fluid"
+                        src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80"
+                        alt="Newsletter">
                 </div>
                 <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Ready to Get Started?</div>
@@ -506,11 +549,12 @@
                         <button type="button" class="btn shadow-none position-absolute top-0 end-0 mt-1 me-2"><i
                                 class="fa fa-paper-plane text-primary fs-4"></i></button>
                     </div>
-                    <small class="text-white-50">Join hundreds of companies already transforming their business with AI.</small>
+                    <small class="text-white-50">Join hundreds of companies already transforming their business with
+                        AI.</small>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Newsletter End -->
 
     <!-- Footer Start -->
@@ -519,21 +563,26 @@
             <div class="row g-5">
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
                     <a href="index.html" class="d-inline-block mb-3">
-                        <h2 class="text-white">Reach<span class="text-primary">-</span>Out<span class="text-primary">.</span>AI</h2>
+                        <h2 class="text-white">Reach<span class="text-primary">-</span>Out<span
+                                class="text-primary">.</span>AI</h2>
                     </a>
-                    <p class="mb-0">Designing Intelligence That Adapts to You. We build AI platforms that are personal by design and practical by nature.</p>
+                    <p class="mb-0">Designing Intelligence That Adapts to You. We build AI platforms that are personal
+                        by design and practical by nature.</p>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                     <h5 class="text-white mb-4">Get In Touch</h5>
-                    <p><i class="fa fa-map-marker-alt me-3"></i>No 53, Sneha, Kachohalli, Gangondanahalli, Dasanapura, Bangalore North, Bangalore- 562162</p>
+                    <p><i class="fa fa-map-marker-alt me-3"></i>No 53, Sneha, Kachohalli, Gangondanahalli, Dasanapura,
+                        Bangalore North, Bangalore- 562162</p>
                     <p><i class="fa fa-phone-alt me-3"></i>+91 6361057518</p>
                     <p><i class="fa fa-envelope me-3"></i>admin@reach-out.ai</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
+                        <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
                         <a class="btn btn-outline-light btn-social" target="_blank"
                             href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61577901904209"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank"
+                            href="https://www.youtube.com/channel/UCp9N4nWn76pG3_r7BjEoKNg"><i
+                                class="fab fa-youtube"></i></a>
                         <a class="btn btn-outline-light btn-social" target="_blank"
                             href="https://www.instagram.com/reach_out_ai_technology/"><i
                                 class="fab fa-instagram"></i></a>
@@ -546,14 +595,17 @@
                     <h5 class="text-white mb-4">Popular Link</h5>
                     <a class="btn btn-link" href="about.html">About Us</a>
                     <a class="btn btn-link" href="contact.html">Contact Us</a>
+                    <!-- <a class="btn btn-link" href="">Privacy Policy</a>
+                    <a class="btn btn-link" href="">Terms & Condition</a>
+                    <a class="btn btn-link" href="">Career</a> -->
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="service.html">Education AI Platforms</a>
-                    <a class="btn btn-link" href="service.html">Generative AI Training</a>
-                    <a class="btn btn-link" href="service.html">Companion Bots</a>
-                    <a class="btn btn-link" href="service.html">Agentic Workflow Systems</a>
-                    <a class="btn btn-link" href="service.html">Custom LLM & SLM Training</a>
+                    <a class="btn btn-link" href="education-ai-platforms.html">Education AI Platforms</a>
+                    <a class="btn btn-link" href="generative-ai-training.html">Generative AI Training</a>
+                    <a class="btn btn-link" href="ai-companion-bots.html">Companion Bots</a>
+                    <a class="btn btn-link" href="agentic-workflow-systems.html">Agentic Workflow Systems</a>
+                    <a class="btn btn-link" href="custom-llm-slm-training.html">Custom LLM & SLM Training</a>
                 </div>
             </div>
         </div>
@@ -561,13 +613,19 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        <!-- ©Copyright 2025 The Reach Out AI Technology  All Rights Reserved -->
                         &copy; 2025 <a class="border-bottom" href="#">Reach-Out AI Technology</a>, All Right Reserved.
+
+                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
+                        <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By
+                        <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a> -->
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
-                            <a href="index.html">Home</a>
+                            <a href="">Home</a>
+                            <!-- <a href="">Cookies</a> -->
                             <a href="contact.html">Help</a>
-                            <a href="index.html">FAQs</a>
+                            <a href="#faq">FAQs</a>
                         </div>
                     </div>
                 </div>
@@ -585,7 +643,7 @@
 
     <script>
         // Spinner functionality
-        $(window).on('load', function() {
+        $(window).on('load', function () {
             if ($('#spinner').length) {
                 $('#spinner').removeClass('show');
             }
@@ -609,19 +667,93 @@
             }
         });
         $('.back-to-top').click(function () {
-            $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
+            $('html, body').animate({ scrollTop: 0 }, 1500, 'easeInOutExpo');
             return false;
         });
 
         // WOW.js Animation (Simple fallback)
-        $(document).ready(function() {
-            $('.wow').each(function(i) {
-                $(this).delay(i * 200).animate({opacity: 1}, 1000);
+        $(document).ready(function () {
+            $('.wow').each(function (i) {
+                $(this).delay(i * 200).animate({ opacity: 1 }, 1000);
             });
         });
 
         // Initialize animations
         $('.wow').css('opacity', 0);
+    </script>
+
+       
+     <!-- ===== Attachable Search Functionality ===== -->
+    <script>
+        const pages = [
+            { title: "Home", url: "index.html", keywords: ["home", "main", "reach-out", "start", "dashboard"] },
+            { title: "About", url: "about.html", keywords: ["about", "mission", "company", "team", "who we are"] },
+            { title: "Services", url: "service.html", keywords: ["services", "offerings", "solutions", "products"] },
+            { title: "Contact", url: "contact.html", keywords: ["contact", "help", "get in touch"] },
+            { title: "Education AI Platforms", url: "education-ai-platforms.html", keywords: ["education", "ai", "edtech", "learning platform"] },
+            { title: "Generative AI Training", url: "generative-ai-training.html", keywords: ["generative", "ai training", "gpt", "llm training", "model training"] },
+            { title: "AI Companion Bots", url: "ai-companion-bots.html", keywords: ["companion bot", "ai bot", "virtual assistant", "chatbot", "assistant"] },
+            { title: "Agentic Workflow Systems", url: "agentic-workflow-systems.html", keywords: ["agentic", "workflow", "automate", "process", "agentic workflow", "system"] },
+            { title: "Custom LLM & SLM Training", url: "custom-llm-slm-training.html", keywords: ["custom llm", "custom slm", "model customization", "training", "fine-tune llm", "fine-tune slm"] },
+            { title: "Education AI", url: "education-ai.html", keywords: ["education", "school ai", "edtech", "education platform", "learning ai"] },
+            { title: "Healthcare AI", url: "healthcare-ai.html", keywords: ["healthcare", "medical ai", "health ai", "clinical ai", "hospital"] },
+            { title: "Media Solutions", url: "media-solutions.html", keywords: ["media", "content", "media ai", "tv", "broadcast", "media platform"] },
+            { title: "Enterprise Tools", url: "enterprise-tools.html", keywords: ["enterprise", "business tools", "corporate", "enterprise ai", "workflow tools"] },
+            { title: "Consulting & R&D Services", url: "consulting-rd-services.html", keywords: ["consulting", "research", "r&d", "services", "ai consulting", "development"] }
+        ];
+
+
+        // Attach search handler after DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            var input = document.querySelector('#searchModal input[type="text"]');
+            var modalBody = document.querySelector('#searchModal .modal-body');
+
+            // Create or get dropdown
+            function getDropdown() {
+                let dropdown = document.getElementById('searchResultsDropdown');
+                if (!dropdown) {
+                    dropdown = document.createElement('div');
+                    dropdown.id = 'searchResultsDropdown';
+                    dropdown.className = 'list-group';
+                    dropdown.style.position = 'absolute';
+                    dropdown.style.left = 0;
+                    dropdown.style.right = 0;
+                    dropdown.style.background = '#fff';
+                    dropdown.style.zIndex = 1050;
+                    dropdown.style.top = '70px';
+                    dropdown.style.width = '100%';
+                    modalBody.appendChild(dropdown);
+                }
+                return dropdown;
+            }
+
+            input.addEventListener('input', function (e) {
+                const query = e.target.value.toLowerCase().trim();
+                const results = query
+                    ? pages.filter(page =>
+                        page.keywords.some(keyword => keyword.includes(query))
+                    )
+                    : [];
+                let dropdown = getDropdown();
+                if (results.length) {
+                    dropdown.innerHTML = results.map(r =>
+                        `<a href="${r.url}" class="list-group-item list-group-item-action">${r.title}</a>`
+                    ).join('');
+                } else if (query) {
+                    dropdown.innerHTML = '<div class="list-group-item">No results found</div>';
+                } else {
+                    dropdown.innerHTML = '';
+                }
+                dropdown.style.display = query ? 'block' : 'none';
+            });
+
+            // Hide results on search modal close
+            document.getElementById('searchModal').addEventListener('hidden.bs.modal', function () {
+                let dropdown = document.getElementById('searchResultsDropdown');
+                if (dropdown) dropdown.style.display = 'none';
+                if (input) input.value = '';
+            });
+        });
     </script>
 </body>
 

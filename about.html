@@ -30,6 +30,37 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Styles for the search results dropdown in the modal */
+        #searchResultsDropdown {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            z-index: 1050;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-group-item-action {
+            padding: 12px 18px;
+            border-bottom: 1px solid #eee;
+            color: #212529;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .list-group-item-action:hover {
+            background: #f1f1f1;
+            color: #0d6efd;
+        }
+
+        #searchResultsDropdown .list-group-item:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -42,13 +73,12 @@
     </div>
     <!-- Spinner End -->
 
-
     <!-- Navbar Start -->
     <div class="container-fluid sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <a href="index.html" class="navbar-brand">
-                    <h2 class="text-white">Reach<span class="text-dark">-</span>Out<span class="text-dark">.</span>AI
+                    <h2 class="text-white">Reach<span class="text-white">-</span>Out<span class="text-white">.</span>AI
                     </h2>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
@@ -60,27 +90,15 @@
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link active">About</a>
                         <a href="service.html" class="nav-item nav-link">Services</a>
-                        <!-- <a href="project.html" class="nav-item nav-link">Projects</a> -->
-                        <!-- <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu bg-light mt-2">
-                                <a href="feature.html" class="dropdown-item">Features</a>
-                                <a href="team.html" class="dropdown-item">Our Team</a>
-                                <a href="faq.html" class="dropdown-item">FAQs</a>
-                                <a href="testimonial.html" class="dropdown-item">Testimonial</a>
-                                <a href="404.html" class="dropdown-item">404 Page</a>
-                            </div>
-                        </div> -->
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                     </div>
-                    <butaton type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
-                        data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+                    <button type="button" class="btn text-white p-0 d-none d-lg-block" data-bs-toggle="modal"
+                        data-bs-target="#searchModal"><i class="fa fa-search"></i></button>
                 </div>
             </nav>
         </div>
     </div>
     <!-- Navbar End -->
-
 
     <!-- Hero Start -->
     <div class="container-fluid pt-5 bg-primary hero-header">
@@ -90,7 +108,7 @@
                     <h1 class="display-4 text-white mb-4 animated slideInRight">About Us</h1>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb justify-content-center justify-content-lg-start mb-0">
-                            <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a class="text-white" href="index.html">Home</a></li>
                             <li class="breadcrumb-item"><a class="text-white" href="#">Pages</a></li>
                             <li class="breadcrumb-item text-white active" aria-current="page">About Us</li>
                         </ol>
@@ -104,7 +122,6 @@
     </div>
     <!-- Hero End -->
 
-
     <!-- Full Screen Search Start -->
     <div class="modal fade" id="searchModal" tabindex="-1">
         <div class="modal-dialog modal-fullscreen">
@@ -113,18 +130,18 @@
                     <button type="button" class="btn btn-square bg-white btn-close" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
-                <div class="modal-body d-flex align-items-center justify-content-center">
+                <div class="modal-body d-flex align-items-center justify-content-center" style="position:relative;">
                     <div class="input-group" style="max-width: 600px;">
                         <input type="text" class="form-control bg-transparent border-light p-3"
                             placeholder="Type search keyword">
                         <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
                     </div>
+                    <!-- Search results dropdown will be injected here -->
                 </div>
             </div>
         </div>
     </div>
     <!-- Full Screen Search End -->
-
 
     <!-- About Start -->
     <div class="container-fluid py-5">
@@ -137,37 +154,27 @@
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                     <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">About Reach-Out AI</div>
-                    <h1 class="mb-4">Arting AI: Where Design Meets Intelligence</h1>
-                    <p class="mb-4">At Reach-Out, we build platforms that personalize AI using GenAI, agentic systems,
-                        and real-world data to make tech actually useful.</p>
-                    <p class="mb-4">We believe AI should be practical, personal, and built for impact. That’s why we
-                        focus on tools that help people teach better, learn faster, work smarter, and live more
-                        meaningfully.</p>
-                    <p class="mb-4">With deep experience in LLMs, multi-agent design, data orchestration, and
-                        privacy-first systems, we bridge the gap between innovation and everyday life.</p>
-                    <!-- <div class="row g-3">
-                        <div class="col-sm-6">
-                            <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Award Winning</h6>
-                            <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Professional Staff</h6>
-                        </div>
-                        <div class="col-sm-6">
-                            <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>24/7 Support</h6>
-                            <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Fair Prices</h6>
-                        </div>
-                    </div> -->
-                    <!-- <div class="d-flex align-items-center mt-4">
-                        <a class="btn btn-primary rounded-pill px-4 me-3" href="">Read More</a>
-                        <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
-                    </div> -->
+                    <h1 class="mb-4">Where Human Ingenuity Meets Machine Intelligence</h1>
+                    <p class="mb-4">
+                        Reach-Out AI is dedicated to transforming education, businesses, and everyday life through
+                        personalized Artificial Intelligence.
+                        By combining the power of Generative AI, intelligent multi-agent systems, and adaptable data
+                        orchestration, we build technology that works for you.
+                    </p>
+                    <p class="mb-4">
+                        Our platform is designed to help teachers innovate, students thrive, organizations automate, and
+                        individuals lead more meaningful lives.
+                        We prioritize user privacy, ethical design, and solutions that are both practical and scalable.
+                    </p>
+                    <p class="mb-4">
+                        Whether you're looking for AI-powered education tools, custom model training, or smart agentic
+                        workflow systems, Reach-Out AI bridges the gap between innovation and impact.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
     <!-- About End -->
-
 
     <!-- Feature Start -->
     <div class="container-fluid bg-primary feature pt-5">
@@ -177,59 +184,33 @@
                     <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Why Choose Reach-Out</div>
                     <h1 class="text-white mb-4">Personalization is the future. We make it real.</h1>
                     <p class="text-light mb-4">In a world that's moving fast, Reach-Out stands out by focusing on what
-                        really matters</p>
+                        really matters.</p>
                     <div class="d-flex align-items-center text-white mb-3">
                         <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
                             <i class="fa fa-check"></i>
                         </div>
-                        <span>Built for People</span>
+                        <span>Built for Real People</span>
                     </div>
                     <div class="d-flex align-items-center text-white mb-3">
                         <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
                             <i class="fa fa-check"></i>
                         </div>
-                        <span>Keeps Up With Change</span>
+                        <span>Adaptable to Change</span>
                     </div>
                     <div class="d-flex align-items-center text-white mb-3">
                         <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
                             <i class="fa fa-check"></i>
                         </div>
-                        <span>Focused on What Matters</span>
+                        <span>Privacy by Design</span>
                     </div>
                     <div class="d-flex align-items-center text-white mb-3">
                         <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
                             <i class="fa fa-check"></i>
                         </div>
-                        <span>Privacy Isn’t Optional</span>
-                    </div>
-                    <div class="d-flex align-items-center text-white mb-3">
-                        <div class="btn-sm-square bg-white text-primary rounded-circle me-3">
-                            <i class="fa fa-check"></i>
-                        </div>
-                        <span>Smarter Over Time</span>
+                        <span>Evolves with Your Needs</span>
                     </div>
                     <h2 class="text-light mb-4">Choose Reach-Out to experience AI that’s simple, smart, and built around
                         you.</h2>
-                    <div class="row g-4 pt-3">
-                        <div class="col-sm-6">
-                            <div class="d-flex rounded p-3" style="background: rgba(256, 256, 256, 0.1);">
-                                <i class="fa fa-users fa-3x text-white"></i>
-                                <div class="ms-3">
-                                    <h2 class="text-white mb-0" data-toggle="counter-up">9999</h2>
-                                    <p class="text-white mb-0">Happy Clients</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="d-flex rounded p-3" style="background: rgba(256, 256, 256, 0.1);">
-                                <i class="fa fa-check fa-3x text-white"></i>
-                                <div class="ms-3">
-                                    <h2 class="text-white mb-0" data-toggle="counter-up">9999</h2>
-                                    <p class="text-white mb-0">Project Complete</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-md-end wow fadeIn" data-wow-delay="0.5s">
                     <img class="img-fluid" src="img/feature.png" alt="">
@@ -239,107 +220,8 @@
     </div>
     <!-- Feature End -->
 
-
-    <!-- Team Start -->
-    <!-- <div class="container-fluid bg-light py-5">
-        <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
-                    <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Our Team</div>
-                    <h1 class="mb-4">Meet Our Experienced Team Members</h1>
-                    <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                        amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                        clita duo justo et tempor eirmod magna dolore erat amet</p>
-                    <a class="btn btn-primary rounded-pill px-4" href="">Read More</a>
-                </div>
-                <div class="col-lg-7">
-                    <div class="row g-4">
-                        <div class="col-md-6">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.1s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-1.jpg" alt="">
-                                        <h5 class="mb-0">Boris Johnson</h5>
-                                        <small>Founder & CEO</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-twitter"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-instagram"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-linkedin-in"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-2.jpg" alt="">
-                                        <h5 class="mb-0">Adam Crew</h5>
-                                        <small>Executive Manager</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-twitter"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-instagram"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-linkedin-in"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 pt-md-4">
-                            <div class="row g-4">
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-3.jpg" alt="">
-                                        <h5 class="mb-0">Kate Winslet</h5>
-                                        <small>Co Founder</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-twitter"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-instagram"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-linkedin-in"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-12 wow fadeIn" data-wow-delay="0.7s">
-                                    <div class="team-item bg-white text-center rounded p-4 pt-0">
-                                        <img class="img-fluid rounded-circle p-4" src="img/team-4.jpg" alt="">
-                                        <h5 class="mb-0">Cody Gardner</h5>
-                                        <small>Project Manager</small>
-                                        <div class="d-flex justify-content-center mt-3">
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-facebook-f"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-twitter"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-instagram"></i></a>
-                                            <a class="btn btn-square btn-primary m-1" href=""><i
-                                                    class="fab fa-linkedin-in"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!-- Team End -->
-
-
     <!-- Newsletter Start -->
-    <div class="container-fluid bg-primary newsletter py-5">
+    <!-- <div class="container-fluid bg-primary newsletter py-5">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
@@ -359,9 +241,8 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Newsletter End -->
-
 
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-white-50 footer pt-5">
@@ -382,11 +263,12 @@
                     <p><i class="fa fa-phone-alt me-3"></i>+91 6361057518</p>
                     <p><i class="fa fa-envelope me-3"></i>admin@reach-out.ai</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" target="_blank"
                             href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61577901904209"><i
                                 class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank"
+                            href="https://www.youtube.com/channel/UCp9N4nWn76pG3_r7BjEoKNg"><i
+                                class="fab fa-youtube"></i></a>
                         <a class="btn btn-outline-light btn-social" target="_blank"
                             href="https://www.instagram.com/reach_out_ai_technology/"><i
                                 class="fab fa-instagram"></i></a>
@@ -397,19 +279,16 @@
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Popular Link</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
-                    <!-- <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Career</a> -->
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="service.html">Education AI Platforms</a>
-                    <a class="btn btn-link" href="service.html">Generative AI Training</a>
-                    <a class="btn btn-link" href="service.html">Companion Bots</a>
-                    <a class="btn btn-link" href="service.html">Agentic Workflow Systems</a>
-                    <a class="btn btn-link" href="service.html">Custom LLM & SLM Training</a>
+                    <a class="btn btn-link" href="education-ai-platforms.html">Education AI Platforms</a>
+                    <a class="btn btn-link" href="generative-ai-training.html">Generative AI Training</a>
+                    <a class="btn btn-link" href="ai-companion-bots.html">Companion Bots</a>
+                    <a class="btn btn-link" href="agentic-workflow-systems.html">Agentic Workflow Systems</a>
+                    <a class="btn btn-link" href="custom-llm-slm-training.html">Custom LLM & SLM Training</a>
                 </div>
             </div>
         </div>
@@ -417,19 +296,13 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <!-- ©Copyright 2025 The Reach Out AI Technology  All Rights Reserved -->
                         &copy; 2025 <a class="border-bottom" href="#">Reach-Out AI Technology</a>, All Right Reserved.
-
-                        <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        <!-- Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By
-                        <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a> -->
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
                             <a href="index.html">Home</a>
-                            <!-- <a href="">Cookies</a> -->
                             <a href="contact.html">Help</a>
-                            <a href="index.html">FAQs</a>
+                            <a href="#faq">FAQs</a>
                         </div>
                     </div>
                 </div>
@@ -438,10 +311,8 @@
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
-
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -451,9 +322,81 @@
     <script src="lib/waypoints/waypoints.min.js"></script>
     <script src="lib/counterup/counterup.min.js"></script>
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <!-- ===== Attachable Search Functionality ===== -->
+    <script>
+        const pages = [
+            { title: "Home", url: "index.html", keywords: ["home", "main", "reach-out", "start", "dashboard"] },
+            { title: "About", url: "about.html", keywords: ["about", "mission", "company", "team", "who we are"] },
+            { title: "Services", url: "service.html", keywords: ["services", "offerings", "solutions", "products"] },
+            { title: "Contact", url: "contact.html", keywords: ["contact", "help", "get in touch"] },
+            { title: "Education AI Platforms", url: "education-ai-platforms.html", keywords: ["education", "ai", "edtech", "learning platform"] },
+            { title: "Generative AI Training", url: "generative-ai-training.html", keywords: ["generative", "ai training", "gpt", "llm training", "model training"] },
+            { title: "AI Companion Bots", url: "ai-companion-bots.html", keywords: ["companion bot", "ai bot", "virtual assistant", "chatbot", "assistant"] },
+            { title: "Agentic Workflow Systems", url: "agentic-workflow-systems.html", keywords: ["agentic", "workflow", "automate", "process", "agentic workflow", "system"] },
+            { title: "Custom LLM & SLM Training", url: "custom-llm-slm-training.html", keywords: ["custom llm", "custom slm", "model customization", "training", "fine-tune llm", "fine-tune slm"] },
+            { title: "Education AI", url: "education-ai.html", keywords: ["education", "school ai", "edtech", "education platform", "learning ai"] },
+            { title: "Healthcare AI", url: "healthcare-ai.html", keywords: ["healthcare", "medical ai", "health ai", "clinical ai", "hospital"] },
+            { title: "Media Solutions", url: "media-solutions.html", keywords: ["media", "content", "media ai", "tv", "broadcast", "media platform"] },
+            { title: "Enterprise Tools", url: "enterprise-tools.html", keywords: ["enterprise", "business tools", "corporate", "enterprise ai", "workflow tools"] },
+            { title: "Consulting & R&D Services", url: "consulting-rd-services.html", keywords: ["consulting", "research", "r&d", "services", "ai consulting", "development"] }
+        ];
+
+
+        // Attach search handler after DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            var input = document.querySelector('#searchModal input[type="text"]');
+            var modalBody = document.querySelector('#searchModal .modal-body');
+
+            // Create or get dropdown
+            function getDropdown() {
+                let dropdown = document.getElementById('searchResultsDropdown');
+                if (!dropdown) {
+                    dropdown = document.createElement('div');
+                    dropdown.id = 'searchResultsDropdown';
+                    dropdown.className = 'list-group';
+                    dropdown.style.position = 'absolute';
+                    dropdown.style.left = 0;
+                    dropdown.style.right = 0;
+                    dropdown.style.background = '#fff';
+                    dropdown.style.zIndex = 1050;
+                    dropdown.style.top = '70px';
+                    dropdown.style.width = '100%';
+                    modalBody.appendChild(dropdown);
+                }
+                return dropdown;
+            }
+
+            input.addEventListener('input', function (e) {
+                const query = e.target.value.toLowerCase().trim();
+                const results = query
+                    ? pages.filter(page =>
+                        page.keywords.some(keyword => keyword.includes(query))
+                    )
+                    : [];
+                let dropdown = getDropdown();
+                if (results.length) {
+                    dropdown.innerHTML = results.map(r =>
+                        `<a href="${r.url}" class="list-group-item list-group-item-action">${r.title}</a>`
+                    ).join('');
+                } else if (query) {
+                    dropdown.innerHTML = '<div class="list-group-item">No results found</div>';
+                } else {
+                    dropdown.innerHTML = '';
+                }
+                dropdown.style.display = query ? 'block' : 'none';
+            });
+
+            // Hide results on search modal close
+            document.getElementById('searchModal').addEventListener('hidden.bs.modal', function () {
+                let dropdown = document.getElementById('searchResultsDropdown');
+                if (dropdown) dropdown.style.display = 'none';
+                if (input) input.value = '';
+            });
+        });
+    </script>
 </body>
 
 </html>

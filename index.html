@@ -30,6 +30,38 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        /* Styles for the search results dropdown in the modal */
+        #searchResultsDropdown {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            background: #fff;
+            z-index: 1050;
+            border-radius: 8px;
+            box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .list-group-item-action {
+            padding: 12px 18px;
+            border-bottom: 1px solid #eee;
+            color: #212529;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+        }
+
+        .list-group-item-action:hover {
+            background: #f1f1f1;
+            color: #0d6efd;
+        }
+
+        #searchResultsDropdown .list-group-item:last-child {
+            border-bottom: none;
+        }
+    </style>
 </head>
 
 <body>
@@ -48,7 +80,7 @@
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-dark p-0">
                 <a href="index.html" class="navbar-brand">
-                    <h2 class="text-white">Reach<span class="text-dark">-</span>Out<span class="text-dark">.</span>AI
+                    <h2 class="text-white">Reach<span class="text-white">-</span>Out<span class="text-white">.</span>AI
                     </h2>
                 </a>
                 <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
@@ -94,9 +126,11 @@
                     <p class="text-white mb-4 animated slideInRight">We build services that turn personalized AI into
                         everyday tools. They're designed for people and built to make real life simpler, smarter, and
                         more human.</p>
-                    <a href="#explore-services" class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Explore Our
+                    <a href="#explore-services"
+                        class="btn btn-light py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight">Explore Our
                         services</a>
-                    <a href="#why-reach-out" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Why
+                    <a href="#why-reach-out"
+                        class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">Why
                         Reach-Out?</a>
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-lg-end">
@@ -160,10 +194,16 @@
                     </div> -->
                     <div class="d-flex align-items-center mt-4">
                         <a class="btn btn-primary rounded-pill px-4 me-3" href="about.html">Read More</a>
-                        <a class="btn btn-outline-primary btn-square me-3" target="_blank" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61577901904209"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-3" target="_blank"
+                            href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61577901904209"><i
+                                class="fab fa-facebook-f"></i></a>
                         <!-- <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-twitter"></i></a> -->
-                        <a class="btn btn-outline-primary btn-square me-3" target="_blank" href="https://www.instagram.com/reach_out_ai_technology/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-primary btn-square" target="_blank" href="https://www.linkedin.com/company/reach-out-ai-technologies"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="btn btn-outline-primary btn-square me-3" target="_blank"
+                            href="https://www.instagram.com/reach_out_ai_technology/"><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-primary btn-square" target="_blank"
+                            href="https://www.linkedin.com/company/reach-out-ai-technologies"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
             </div>
@@ -243,14 +283,14 @@
                     </div>
                 </div> -->
 
-                 <div class="masonry-item wow fadeInUp" data-wow-delay="0.5s">
+                <div class="masonry-item wow fadeInUp" data-wow-delay="0.5s">
                     <div class="masonry-content">
                         <div class="masonry-icon">
                             <i class="fa fa-brain fa-2x"></i>
                         </div>
                         <h5>Custom LLM & SLM Training</h5>
                         <p>Domain-specific models trained on your data — fast, accurate,
-                                    and private by design.</p>
+                            and private by design.</p>
                         <a href="custom-llm-slm-training.html" class="btn btn-outline-primary btn-sm">Explore</a>
                     </div>
                 </div>
@@ -451,7 +491,7 @@
                     </div>
                     <h2 class="text-light mb-4">Choose Reach-Out to experience AI that’s simple, smart, and built around
                         you.</h2>
-                    <div class="row g-4 pt-3">
+                    <!-- <div class="row g-4 pt-3">
                         <div class="col-sm-6">
                             <div class="d-flex rounded p-3" style="background: rgba(256, 256, 256, 0.1);">
                                 <i class="fa fa-users fa-3x text-white"></i>
@@ -470,7 +510,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="col-lg-6 align-self-end text-center text-md-end wow fadeIn" data-wow-delay="0.5s">
                     <img class="img-fluid" src="img/feature.png" alt="">
@@ -772,7 +812,7 @@
 
 
     <!-- Testimonial Start -->
-    <div class="container-xxl py-5">
+    <!-- <div class="container-xxl py-5">
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
@@ -831,12 +871,12 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Testimonial End -->
 
 
     <!-- Newsletter Start -->
-    <div class="container-fluid bg-primary newsletter py-5">
+    <!-- <div class="container-fluid bg-primary newsletter py-5">
         <div class="container">
             <div class="row g-5 align-items-center">
                 <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
@@ -856,7 +896,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Newsletter End -->
 
 
@@ -879,28 +919,36 @@
                     <p><i class="fa fa-phone-alt me-3"></i>+91 6361057518</p>
                     <p><i class="fa fa-envelope me-3"></i>admin@reach-out.ai</p>
                     <div class="d-flex pt-2">
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61577901904209"><i class="fab fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
-                        <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.instagram.com/reach_out_ai_technology/"><i class="fab fa-instagram"></i></a>
-                        <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.linkedin.com/company/reach-out-ai-technologies"><i class="fab fa-linkedin-in"></i></a>
+                        <!-- <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a> -->
+                        <a class="btn btn-outline-light btn-social" target="_blank"
+                            href="https://www.facebook.com/profile.php?viewas=100000686899395&id=61577901904209"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank"
+                            href="https://www.youtube.com/channel/UCp9N4nWn76pG3_r7BjEoKNg"><i
+                                class="fab fa-youtube"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank"
+                            href="https://www.instagram.com/reach_out_ai_technology/"><i
+                                class="fab fa-instagram"></i></a>
+                        <a class="btn btn-outline-light btn-social" target="_blank"
+                            href="https://www.linkedin.com/company/reach-out-ai-technologies"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
                     <h5 class="text-white mb-4">Popular Link</h5>
-                    <a class="btn btn-link" href="">About Us</a>
-                    <a class="btn btn-link" href="">Contact Us</a>
+                    <a class="btn btn-link" href="about.html">About Us</a>
+                    <a class="btn btn-link" href="contact.html">Contact Us</a>
                     <!-- <a class="btn btn-link" href="">Privacy Policy</a>
                     <a class="btn btn-link" href="">Terms & Condition</a>
                     <a class="btn btn-link" href="">Career</a> -->
                 </div>
                 <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
                     <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link" href="service.html">Education AI Platforms</a>
-                    <a class="btn btn-link" href="service.html">Generative AI Training</a>
-                    <a class="btn btn-link" href="service.html">Companion Bots</a>
-                    <a class="btn btn-link" href="service.html">Agentic Workflow Systems</a>
-                    <a class="btn btn-link" href="service.html">Custom LLM & SLM Training</a>
+                    <a class="btn btn-link" href="education-ai-platforms.html">Education AI Platforms</a>
+                    <a class="btn btn-link" href="generative-ai-training.html">Generative AI Training</a>
+                    <a class="btn btn-link" href="ai-companion-bots.html">Companion Bots</a>
+                    <a class="btn btn-link" href="agentic-workflow-systems.html">Agentic Workflow Systems</a>
+                    <a class="btn btn-link" href="custom-llm-slm-training.html">Custom LLM & SLM Training</a>
                 </div>
             </div>
         </div>
@@ -945,6 +993,79 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+     <!-- ===== Attachable Search Functionality ===== -->
+    <script>
+        const pages = [
+            { title: "Home", url: "index.html", keywords: ["home", "main", "reach-out", "start", "dashboard"] },
+            { title: "About", url: "about.html", keywords: ["about", "mission", "company", "team", "who we are"] },
+            { title: "Services", url: "service.html", keywords: ["services", "offerings", "solutions", "products"] },
+            { title: "Contact", url: "contact.html", keywords: ["contact", "help", "get in touch"] },
+            { title: "Education AI Platforms", url: "education-ai-platforms.html", keywords: ["education", "ai", "edtech", "learning platform"] },
+            { title: "Generative AI Training", url: "generative-ai-training.html", keywords: ["generative", "ai training", "gpt", "llm training", "model training"] },
+            { title: "AI Companion Bots", url: "ai-companion-bots.html", keywords: ["companion bot", "ai bot", "virtual assistant", "chatbot", "assistant"] },
+            { title: "Agentic Workflow Systems", url: "agentic-workflow-systems.html", keywords: ["agentic", "workflow", "automate", "process", "agentic workflow", "system"] },
+            { title: "Custom LLM & SLM Training", url: "custom-llm-slm-training.html", keywords: ["custom llm", "custom slm", "model customization", "training", "fine-tune llm", "fine-tune slm"] },
+            { title: "Education AI", url: "education-ai.html", keywords: ["education", "school ai", "edtech", "education platform", "learning ai"] },
+            { title: "Healthcare AI", url: "healthcare-ai.html", keywords: ["healthcare", "medical ai", "health ai", "clinical ai", "hospital"] },
+            { title: "Media Solutions", url: "media-solutions.html", keywords: ["media", "content", "media ai", "tv", "broadcast", "media platform"] },
+            { title: "Enterprise Tools", url: "enterprise-tools.html", keywords: ["enterprise", "business tools", "corporate", "enterprise ai", "workflow tools"] },
+            { title: "Consulting & R&D Services", url: "consulting-rd-services.html", keywords: ["consulting", "research", "r&d", "services", "ai consulting", "development"] }
+        ];
+
+
+        // Attach search handler after DOM is ready
+        document.addEventListener('DOMContentLoaded', function () {
+            var input = document.querySelector('#searchModal input[type="text"]');
+            var modalBody = document.querySelector('#searchModal .modal-body');
+
+            // Create or get dropdown
+            function getDropdown() {
+                let dropdown = document.getElementById('searchResultsDropdown');
+                if (!dropdown) {
+                    dropdown = document.createElement('div');
+                    dropdown.id = 'searchResultsDropdown';
+                    dropdown.className = 'list-group';
+                    dropdown.style.position = 'absolute';
+                    dropdown.style.left = 0;
+                    dropdown.style.right = 0;
+                    dropdown.style.background = '#fff';
+                    dropdown.style.zIndex = 1050;
+                    dropdown.style.top = '70px';
+                    dropdown.style.width = '100%';
+                    modalBody.appendChild(dropdown);
+                }
+                return dropdown;
+            }
+
+            input.addEventListener('input', function (e) {
+                const query = e.target.value.toLowerCase().trim();
+                const results = query
+                    ? pages.filter(page =>
+                        page.keywords.some(keyword => keyword.includes(query))
+                    )
+                    : [];
+                let dropdown = getDropdown();
+                if (results.length) {
+                    dropdown.innerHTML = results.map(r =>
+                        `<a href="${r.url}" class="list-group-item list-group-item-action">${r.title}</a>`
+                    ).join('');
+                } else if (query) {
+                    dropdown.innerHTML = '<div class="list-group-item">No results found</div>';
+                } else {
+                    dropdown.innerHTML = '';
+                }
+                dropdown.style.display = query ? 'block' : 'none';
+            });
+
+            // Hide results on search modal close
+            document.getElementById('searchModal').addEventListener('hidden.bs.modal', function () {
+                let dropdown = document.getElementById('searchResultsDropdown');
+                if (dropdown) dropdown.style.display = 'none';
+                if (input) input.value = '';
+            });
+        });
+    </script>
 </body>
 
 </html>
